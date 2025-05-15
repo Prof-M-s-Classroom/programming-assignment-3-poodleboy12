@@ -1,16 +1,17 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-class Graph {
-public:
-    Graph(int vertices);
-    ~Graph();
-    void addEdge(int u, int v, int weight);
-    void primMST();  // Must print MST edges and total weight
+#include <vector>
 
+class Graph {
 private:
-    int** adjMatrix;
-    int numVertices;
+    int vertices;
+    std::vector<std::vector<int> > adjMatrix;
+
+public:
+    Graph(int V);
+    void addEdge(int u, int v, int weight);
+    void primMST();
 };
 
 #endif
